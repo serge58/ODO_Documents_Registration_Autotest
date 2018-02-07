@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Верховный Суд Российской Федерации" junit="false" parallel="none" guice-stage="DEVELOPMENT" configfailurepolicy="skip" thread-count="5" skipfailedinvocationcounts="false" data-provider-thread-count="10" group-by-instances="false" preserve-order="true" allow-return-values="false">
+	<!-- Supported values: "chrome", "firefox", "ie", "htmlunit", "phantomjs", "opera", "marionette", -->
+	<parameter name="browser" value="chrome"/>
+	<parameter name="holdBrowser" value="false"/>
+	<parameter name="baseUrl" value="http://vsrf.sqrm.smarteng.ru/preprod" />
+	
+	<parameter name="reportsFolder" value="target/screenshots" />
+	<!-- parameter name="reportsUrl" value="${BUILD_URL}artifact/target/screenshots/" /-->
+	<parameter name="reportsUrl" value="/target/screenshots/" />
+	
+	<parameter name="timeout" value="31000"/>
+
+	<!-- parameter name="sender" value="bossanova"/-->
+	<parameter name="sender" value="kozlov"/>
+	<parameter name="acceptor" value="petrov"/>
+	<parameter name="acceptorName" value="Петров Владимир Иванович"/>
+	<parameter name="password" value="zzzzzzzz"/>
+	
+	<parameter name="highlightElements" value="false"/>
+	
+	<parameter name="recordVideo" value="false"/>
+	<parameter name="recordVideoAlways" value="false"/> 
+	<parameter name="videoFolder" value="/target/video"/>
+	<parameter name="videoUrl" value="/target/video/"/>
+	
+	<suite-files>
+		<!-- suite-file path="src/suites/odo_DocsReg_Incoming.xml"/--> 
+		<suite-file path="src/suites/odo_DocsReg_Outgoing.xml"/>
+		<!-- suite-file path="src/suites/odo_DocsReg_Internal.xml"/-->
+		<!-- suite-file path="src/suites/odo_DocsReg_Folders.xml"/-->
+		<!-- suite-file path="src/suites/odo_DocsReg_Search.xml"/-->
+	</suite-files> 
+</suite>
